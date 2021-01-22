@@ -59,10 +59,8 @@ CoursesPage.propTypes = {
  }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-           actions:  bindActionCreators(courseActions, dispatch)
-       } 
+const mapDispatchToProps = (di) => {
+         createCourse: courseActions.createCourse
  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);

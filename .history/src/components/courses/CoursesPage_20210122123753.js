@@ -61,7 +61,7 @@ CoursesPage.propTypes = {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-           actions:  bindActionCreators(courseActions, dispatch)
+           actions:  bindActionCreators(courseActions.createCourse
        } 
  }
 

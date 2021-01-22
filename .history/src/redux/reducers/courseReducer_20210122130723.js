@@ -7,6 +7,6 @@ export default function courseReducer  (state = [], action)  {
 
             return [...state, { ...action.course }];
         default:
-            return state 
+            return state
     }
 }

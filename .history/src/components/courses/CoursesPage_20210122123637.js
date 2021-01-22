@@ -47,7 +47,7 @@ import { bindActionCreators } from 'redux';
 
 CoursesPage.propTypes = {
     courses: PropTypes.array.isRequired,
-    actions: PropTypes.object.isRequired,
+    actions: PropTypes.func.isRequired,
 };
 
 
@@ -59,10 +59,8 @@ CoursesPage.propTypes = {
  }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-           actions:  bindActionCreators(courseActions, dispatch)
-       } 
+const mapDispatchToProps = {
+         createCourse: courseActions.createCourse
  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
