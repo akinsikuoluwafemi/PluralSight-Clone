@@ -19,7 +19,8 @@ export default function App() {
           <Route path="/courses" component={CoursesPage} />
 
           <Route path="/course/:slug" component={ManageCoursesPage} />
-          <Route path="/course" component={ManageCoursesPage} />
+
+
 
           <Route component={PageNotFound} />
         </Switch>

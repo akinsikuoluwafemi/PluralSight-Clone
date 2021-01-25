@@ -4,13 +4,11 @@ import {loadCourses} from '../../redux/actions/courseActions';
 import {loadAuthors} from '../../redux/actions/authorActions';
 import PropTypes from 'prop-types';
 import { newCourse } from '../../../tools/mockData';
-import CourseForm from './CourseForm';
 
- const ManageCoursesPage = ({ courses,authors, loadAuthors, loadCourses, ...props}) =>  {
 
-     const [course, setCourse] = useState({ ...props.course });
-     const [errors, setErrors] = useState({ });
-     
+ const ManageCoursesPage = ({ courses,authors, loadAuthors, loadCourses}) =>  {
+
+     const [course, setCourse] = useState({...})
      
    useEffect(() => {
 
@@ -41,7 +39,10 @@ import CourseForm from './CourseForm';
         
 
         return (
-            <CourseForm course={course} errors={errors} authors={authors}  />
+          <>
+            <h2>Manage Course</h2>
+           
+          </>
         );
  }
 

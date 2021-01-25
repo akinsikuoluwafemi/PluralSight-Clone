@@ -8,9 +8,7 @@ import CourseForm from './CourseForm';
 
  const ManageCoursesPage = ({ courses,authors, loadAuthors, loadCourses, ...props}) =>  {
 
-     const [course, setCourse] = useState({ ...props.course });
-     const [errors, setErrors] = useState({ });
-     
+     const [course, setCourse] = useState({...props.course})
      
    useEffect(() => {
 
@@ -41,7 +39,7 @@ import CourseForm from './CourseForm';
         
 
         return (
-            <CourseForm course={course} errors={errors} authors={authors}  />
+            <CourseForm course={} />
         );
  }
 

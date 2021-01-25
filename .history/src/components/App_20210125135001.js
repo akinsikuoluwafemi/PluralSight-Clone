@@ -5,7 +5,7 @@ import AboutPage from './about/AboutPage';
 import Header from './common/Header';
 import PageNotFound from './PageNotFound';
 import CoursesPage from './courses/CoursesPage';
-import ManageCoursesPage from './courses/ManageCoursePage';
+import ManageCoursesPage from './courses/'
 
 
 
@@ -17,9 +17,6 @@ export default function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/courses" component={CoursesPage} />
-
-          <Route path="/course/:slug" component={ManageCoursesPage} />
-          <Route path="/course" component={ManageCoursesPage} />
 
           <Route component={PageNotFound} />
         </Switch>

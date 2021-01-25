@@ -8,7 +8,7 @@ import CourseForm from './CourseForm';
 
  const ManageCoursesPage = ({ courses,authors, loadAuthors, loadCourses, ...props}) =>  {
 
-     const [course, setCourse] = useState({ ...props.course });
+     const [course, setCourse] = useState({ ...props.course })
      const [errors, setErrors] = useState({ });
      
      
