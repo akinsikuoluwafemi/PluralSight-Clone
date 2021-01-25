@@ -13,17 +13,13 @@ import CourseList from './CourseList';
        alert('loading courses failed' + error);
      })
 
-     this.props.actions.loadAuthors().catch(error => {
-       alert("loading authors failed" + error);
-       
-     })
-
+     
    }
    
         
 
     render() {
-       console.log(this.props.courses)
+       console.log(this.props)
         return (
           <>
             <h2>Courses</h2>
@@ -41,15 +37,9 @@ CoursesPage.propTypes = {
 
 
  const mapStateToProps = (state) => {
-    console.log(state.authors)
+
      return {
-         courses: state.authors.length === 0 ? [] : state.courses.map(course => {
-           return {
-             ...course,
-             authorName: state.authors.find(a => a.id === course.authorId).name
-           }
-         }),
-       authors: state.authors
+         courses: state.courses
      }
  }
 

@@ -23,7 +23,7 @@ import CourseList from './CourseList';
         
 
     render() {
-       console.log(this.props.courses)
+       console.log(this.props)
         return (
           <>
             <h2>Courses</h2>
@@ -41,15 +41,14 @@ CoursesPage.propTypes = {
 
 
  const mapStateToProps = (state) => {
-    console.log(state.authors)
+
      return {
-         courses: state.authors.length === 0 ? [] : state.courses.map(course => {
+         courses: state.courses.map(course => {
            return {
              ...course,
              authorName: state.authors.find(a => a.id === course.authorId).name
            }
-         }),
-       authors: state.authors
+         })
      }
  }
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import * as courseActions from '../../redux/actions/courseActions';
-import * as authorActions from '../../redux/actions/authorActions';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import CourseList from './CourseList';
@@ -12,23 +11,21 @@ import CourseList from './CourseList';
      this.props.actions.loadCourses().catch(error => {
        alert('loading courses failed' + error);
      })
-
-     this.props.actions.loadAuthors().catch(error => {
-       alert("loading authors failed" + error);
-       
-     })
-
    }
    
         
 
     render() {
-       console.log(this.props.courses)
+       console.log(this.props)
         return (
           <>
             <h2>Courses</h2>
-            <CourseList courses={this.props.courses }/>
-           
+            <CourseList courses={this.props.co }/>
+            {
+              this.props.courses.map((course) => (
+                <div key={course.title}>{course.title}</div>
+              ))
+            }
           </>
         );
     }
@@ -41,26 +38,17 @@ CoursesPage.propTypes = {
 
 
  const mapStateToProps = (state) => {
-    console.log(state.authors)
+
      return {
-         courses: state.authors.length === 0 ? [] : state.courses.map(course => {
-           return {
-             ...course,
-             authorName: state.authors.find(a => a.id === course.authorId).name
-           }
-         }),
-       authors: state.authors
+         courses: state.courses
      }
  }
 
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: {
-      loadCourses: bindActionCreators(courseActions.loadCourses, dispatch),
-      loadAuthors: bindActionCreators(authorActions.loadAuthors, dispatch),
-    },
-  }; 
+    return {
+           actions:  bindActionCreators(courseActions, dispatch)
+       } 
  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);

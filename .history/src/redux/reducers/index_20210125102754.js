@@ -3,8 +3,7 @@ import courses from './courseReducer';
 import authors from './authorReducer';
 
 const rootReducer = combineReducers({
-    courses,
-    authors
+    courses
 })
 
 export default rootReducer;
