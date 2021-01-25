@@ -49,7 +49,7 @@ import CourseForm from './CourseForm';
         
 
         return (
-            <CourseForm course={course} errors={errors} authors={authors} onChange={handleChange}  />
+            <CourseForm course={course} errors={errors} authors={authors} onChange={}  />
         );
  }
 

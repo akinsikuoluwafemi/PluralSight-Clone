@@ -34,12 +34,7 @@ import CourseForm from './CourseForm';
    
    
      const handleChange = (event) => {
-         const { name, value } = event.target;
-         setCourse(prevCourse => ({
-             ...prevCourse,
-             [name]: name === "authorId" ? parseInt(value,10) : value
-             
-         }))
+         const {name,value } = event.target;
      }
 
     
@@ -49,7 +44,7 @@ import CourseForm from './CourseForm';
         
 
         return (
-            <CourseForm course={course} errors={errors} authors={authors} onChange={handleChange}  />
+            <CourseForm course={course} errors={errors} authors={authors}  />
         );
  }
 
