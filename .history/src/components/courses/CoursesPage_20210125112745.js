@@ -31,7 +31,7 @@ import CourseList from './CourseList';
         
 
     render() {
-       console.log(this.props.courses)
+       console.log(courses)
         return (
           <>
             <h2>Courses</h2>

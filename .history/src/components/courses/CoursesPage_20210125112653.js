@@ -10,16 +10,14 @@ import CourseList from './CourseList';
 
    
    componentDidMount() {
-   const { courses, authors, actions} = this.props;
-   
-    if(courses.length === 0){
-        actions.loadCourses().catch((error) => {
+    if(this.props.courses.length === 0){
+        this.props.actions.loadCourses().catch((error) => {
           alert("loading courses failed" + error);
         });
     } 
     
-     if(authors.length === 0){
-        actions.loadAuthors().catch((error) => {
+     if(this.props.authors.length === 0){
+        this.props.actions.loadAuthors().catch((error) => {
           alert("loading authors failed" + error);
         });
      }

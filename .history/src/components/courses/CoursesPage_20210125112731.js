@@ -18,8 +18,8 @@ import CourseList from './CourseList';
         });
     } 
     
-     if(authors.length === 0){
-        actions.loadAuthors().catch((error) => {
+     if(this.props.authors.length === 0){
+        this.props.actions.loadAuthors().catch((error) => {
           alert("loading authors failed" + error);
         });
      }

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import CourseList from './CourseList';
 
- class CoursesPage extends Component {
+ class ManageCoursesPage extends Component {
 
    
    componentDidMount() {
@@ -42,7 +42,7 @@ import CourseList from './CourseList';
     }
  }
 
-CoursesPage.propTypes = {
+ManageCoursesPage.propTypes = {
     courses: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
     authors: PropTypes.array.isRequired
@@ -72,4 +72,4 @@ const mapDispatchToProps = (dispatch) => {
   }; 
  }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursesPage);
